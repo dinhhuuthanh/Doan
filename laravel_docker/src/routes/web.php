@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,12 +16,17 @@ use App\Http\Controllers\Admin\AdminController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/home', [HomeController::class, 'index'])->name('home');
-Route::get('/category', [HomeController::class, 'category'])->name('category');
-Route::get('/product', [HomeController::class, 'product'])->name('product');
+    Route::get('/category', [HomeController::class, 'category'])->name('category');
+    Route::get('/product', [HomeController::class, 'product'])->name('product');
+    Route::get('/order', [HomeController::class, 'order'])->name('order');
+
+
+Route::get('/', [HomeController::class, 'index'])->name('home');
+
 
 
 Route::get('/admin', [AdminController::class, 'index'])->name('home');
+
+Route::group(['prefix' => 'admin'], function () {
+    Route::get('/category', [CategoryController::class, 'index'])->name('category.index');
+});
