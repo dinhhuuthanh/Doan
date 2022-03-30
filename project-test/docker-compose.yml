@@ -1,0 +1,40 @@
+version: "3"
+services:
+  nginx:
+    container_name: nginx-test
+    image: nginx:latest
+    restart: always
+    ports:
+      - "8089:80"
+    volumes:
+      - ./docker/default.conf:/etc/nginx/conf.d/default.conf
+      - ./src:/var/www/html
+
+  php-fpm:
+    container_name: php-test
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+    restart: always
+    volumes:
+      - ./src:/var/www/html
+
+  mysql-fpm:
+    container_name: mysql-test
+    image: mysql:8.0.20
+    restart: always
+    environment:
+      MYSQL_DATABASE: "thanh"
+      MYSQL_ROOT_PASSWORD: "secret"
+    ports:
+      - 3309:3306
+    command: mysqld --character-set-server=utf8 --collation-server=utf8_general_ci
+
+  adminer:
+    container_name: admin-test
+    image: adminer
+    restart: always
+    ports:
+      - 8084:8080
+volumes:
+  mysqldata: {}

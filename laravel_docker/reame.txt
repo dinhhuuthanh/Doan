@@ -1,0 +1,4 @@
+docker exec -it php sh
+cd /var/www/html
+
+docker exec -it c0eb7e87ceb3 bash

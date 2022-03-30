@@ -1,0 +1,71 @@
+
+.main{
+    width: 100%;
+}
+.main .header{
+    height: 60px;
+    
+    background: black;
+    padding: 18px 15px;
+}
+.header .logo{
+    font-size: 20px;
+    color: #30a5ff;
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    line-height: 24px;
+    
+}
+.header span{
+    text-transform: uppercase;
+    color: white;
+    font-size: 20px;
+    line-height: 24px;
+
+}
+.navbar{
+    background: #fff;
+    height: 91px;
+    padding: 10px 0;
+    border-bottom: 1px solid rgb(138, 134, 134);
+}
+.content{
+    background: #e9ecf2;
+}
+.seach{
+    width: 90%;
+    margin: 0 auto;
+}
+.mndung {
+    padding: 0px;
+    list-style: none;
+}
+.mndung a{
+    font-family: Arial, Helvetica, sans-serif;
+    display: block;
+    color: #444444;
+    font-size: 15px;
+    text-decoration: none;
+    background-size: 15px;
+    padding: 20px 5px 20px 15px;
+}
+.mndung a:hover {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+    background-color: #30a5ff;
+    font-size: 15px;
+    text-decoration: none;
+    background-size: 15px;
+    padding: 20px 5px 20px 15px;
+}
+.fas{
+    margin-right: 10px;
+}
+.title h1{
+    background: #fff;
+    padding: 20px 10px;
+    font-family: Arial, Helvetica, sans-serif;
+
+    
+}

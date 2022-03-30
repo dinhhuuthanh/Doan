@@ -1,0 +1,2 @@
+còn 49day:
+-28/08:cài đặt môi trường,cắt giao diện frontend->mai:cắt giao diện backend,1 số trng frontend
