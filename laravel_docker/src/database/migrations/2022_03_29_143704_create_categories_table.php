@@ -15,8 +15,12 @@ class CreateCategoriesTable extends Migration
     {
         Schema::create('categories', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name')->unique();
-            $table->string('slug')->unique();
+            $table->string('category_name_en');
+            $table->string('category_name_vn');
+            $table->string('category_slug_en');
+            $table->string('category_slug_vn');
+            $table->string('category_icon')->nullable()->default('fa fa-shopping-bag');
+            $table->string('category_image')->nullable()->default('default.jpg');
             $table->timestamps();
         });
     }

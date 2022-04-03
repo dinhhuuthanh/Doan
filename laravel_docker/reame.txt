@@ -1,4 +1,7 @@
 docker exec -it php sh
 cd /var/www/html
 
-docker exec -it c0eb7e87ceb3 bash
+docker exec -it 609166dee33a bash
+php artisan clear-compiled 
+composer dump-autoload
+php artisan optimize

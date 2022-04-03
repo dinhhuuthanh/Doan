@@ -40,7 +40,20 @@
 
     <!-- App css-->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/admin.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="//cdn.jsdelivr.net/bootstrap.tagsinput/0.4.2/bootstrap-tagsinput.min.js"></script>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/bootstrap.tagsinput/0.4.2/bootstrap-tagsinput.css" />
+
+
 </head>
+<style>
+    svg {
+        width: 10px;
+        height: 10px;
+    }
+
+</style>
 
 <body>
 
@@ -50,27 +63,27 @@
         <div class="page-body-wrapper">
             @include('backend.layouts.sidebar')
             <!-- Container-fluid starts-->
-          
-                <div class="page-header">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="page-header-left">
-                                <h3>Dashboard
-                                    <small>Multikart Admin panel</small>
-                                </h3>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <ol class="breadcrumb pull-right">
-                                <li class="breadcrumb-item"><a href="index.html"><i data-feather="home"></i></a></li>
-                                <li class="breadcrumb-item active">Dashboard</li>
-                            </ol>
+
+            <div class="page-header">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="page-header-left">
+                            <h3>Dashboard
+                                <small>Multikart Admin panel</small>
+                            </h3>
                         </div>
                     </div>
+                    <div class="col-lg-6">
+                        <ol class="breadcrumb pull-right">
+                            <li class="breadcrumb-item"><a href="index.html"><i data-feather="home"></i></a></li>
+                            <li class="breadcrumb-item active">Dashboard</li>
+                        </ol>
+                    </div>
                 </div>
-                @yield('content')
-               
-          
+            </div>
+            @yield('content')
+
+
             <!-- Container-fluid Ends-->
 
 
@@ -80,7 +93,7 @@
 
 
         </div>
-   
+
         <!-- latest jquery-->
         <script src="{{ asset('js/jquery-3.3.1.min.js') }}"></script>
 
@@ -135,6 +148,26 @@
 
         <!--script admin-->
         <script src="{{ asset('js/admin-script.js') }}"></script>
+        <!-- Zoom js-->
+        <script src="{{ asset('js/jquery.elevatezoom.js') }}"></script>
+        <script src="{{ asset('js/zoom-scripts.js') }}"></script>
+        <!-- touchspin js-->
+        <script src="{{ asset('js/touchspin/vendors.min.js') }}"></script>
+        <script src="{{ asset('js/touchspin/touchspin.js') }}"></script>
+        <script src="{{ asset('js/touchspin/input-groups.min.js') }}"></script>
+
+        <!-- form validation js-->
+        <script src="{{ asset('js/dashboard/form-validation-custom.js') }}"></script>
+
+        <!-- ckeditor js-->
+        <script src="{{ asset('js/editor/ckeditor/ckeditor.js') }}"></script>
+        <script src="{{ asset('js/editor/ckeditor/styles.js') }}"></script>
+        <script src="{{ asset('js/editor/ckeditor/adapters/jquery.js') }}"></script>
+        <script src="{{ asset('js/editor/ckeditor/ckeditor.custom.js') }}"></script>
+        <!-- Owlcarousel js-->
+        <script src="{{ asset('js/owlcarousel/owl.carousel.js') }}"></script>
+        <script src="{{ asset('js/dashboard/product-carousel.js') }}"></script>
+
 
 </body>
 

@@ -33,15 +33,31 @@
         <!-- Container-fluid starts-->
         <div class="container-fluid">
             <div class="row">
+
                 <div class="col-sm-12">
+                    @if (session('msg'))
+                        <div class="alert alert-success alert-dismissible">
+                            <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                aria-label="Close"></button>
+                            {{ session('msg') }}
+                        </div>
+                    @endif
+                    @if (session('error'))
+                        <div class="alert alert-danger alert-dismissible">
+                            <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                aria-label="Close"></button>
+                            {{ session('error') }}
+                        </div>
+                    @endif
+
                     <div class="card">
                         <div class="card-header">
                             <h5>Products Category</h5>
                         </div>
                         <div class="card-body">
                             <div class="btn-popup pull-right">
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                    data-original-title="test" data-bs-target="#exampleModal">Add Category</button>
+                                <a type="button" class="btn btn-primary" href="{{ route('subcategory.create') }}">Add
+                                    SubCategory</a>
                                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
                                     aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog" role="document">
@@ -78,10 +94,50 @@
                                         </div>
                                     </div>
                                 </div>
+
                             </div>
-                            <div id="basicScenario" class="product-physical table-responsive"></div>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Category Name EN</th>
+                                        <th>Category Name BN</th>
+                                        <th>Category</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($subcategories as $item)
+                                        <tr>
+                                           
+                                            <td class="sorting_1">{{ $item->subcategory_name_en }}</td>
+                                            <td>{{ $item->subcategory_name_vn }}</td>
+                                            <td>{{ $item->category->category_name_en }}</td>
+
+                                            <td>
+                                                <div class="input-group">
+                                                    <a href="{{ route('subcategory.edit', $item->id) }}"
+                                                        class="btn btn-info" title="Edit Data"><i
+                                                            class="fa fa-pencil"></i></a>
+
+
+
+                                                    <a href="{{ route('category.destroy', $item->id) }}"
+                                                        class="btn btn-danger" title="Delete Data" id="delete"><i
+                                                            class="fa fa-trash"></i></a>
+
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                            <div class="d-felx float-end m-4">{{ $subcategories->links() }}
+                            </div>
                         </div>
+
+
                     </div>
+
                 </div>
             </div>
         </div>
